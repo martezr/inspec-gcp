@@ -1,0 +1,8 @@
+name: gcp
+title: InSpec GCP Resource Pack
+maintainer: martez.reed@greenreedtech.com
+summary: This resource pack provides compliance resources for GCP
+copyright: martez.reed@greenreedtech.com
+copyright_email: martez.reed@greenreedtech.com
+version: 0.1.0
+license: Apache 2 license

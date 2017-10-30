@@ -1,0 +1,4 @@
+name: inspec-gcp-integration-tests
+depends:
+  - name: gcp
+    path: ../../../
