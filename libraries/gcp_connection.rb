@@ -3,6 +3,7 @@
 require 'google/apis'
 require 'google/apis/cloudresourcemanager_v1'
 require 'google/apis/compute_v1'
+require 'google/apis/storage_v1'
 require 'googleauth'
 
 class GCPConnection
@@ -21,4 +22,7 @@ class GCPConnection
     @project_client ||= Google::Apis::CloudresourcemanagerV1::CloudResourceManagerService.new
   end
 
+  def storage_client
+    @storage_client ||= Google::Apis::StorageV1::StorageService.new
+  end
 end

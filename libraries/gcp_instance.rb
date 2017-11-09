@@ -5,9 +5,13 @@ class GcpInstance < Inspec.resource(1)
   desc 'Verifies settings for an instance'
 
   example "
-    describe gcp_instance(name: 'my-instance') do
-      it { should be_running }
-      it { should have_roles }
+    describe gcp_instance(project: 'silicon-vertex-398188', zone: 'us-east1-b', name: 'inspec-test') do
+      it { should exist }
+      its('name') { should eq 'inspec-test' }
+      its('machine_type') { should eq 'f1-micro' }
+      its('cpu_platform') { should eq 'Intel Haswell' }
+      its('status') { should eq 'running' }
+      it { should have_network_tag('test') }
     end
   "
 
@@ -32,7 +36,7 @@ class GcpInstance < Inspec.resource(1)
 
   def cpu_platform
     if @instance
-      @instance.cpu_platform
+      return @instance.cpu_platform
     else
       return @error['error']['message']
     end
@@ -63,18 +67,20 @@ class GcpInstance < Inspec.resource(1)
   end
 
   def has_network_tag?(tag_name)
-    test = false
-
-    tags = @instance.tags.items
-    tags.each do |tag|
-      if tag == tag_name
-        puts tag_name
-        test = true
-        break
+    if @instance
+      tags = @instance.tags.items
+      tags.each do |tag|
+        if tag == tag_name
+          return true
+          break
+        end
       end
+    else
+      @error['error']['message']
+      false
     end
 
-  test
+    return false
   end
 
   def exists?
@@ -82,7 +88,7 @@ class GcpInstance < Inspec.resource(1)
   end
 
   def to_s
-    "GCP Instance #{@display_name}"
+    "Instance #{@display_name}"
   end
 
 end

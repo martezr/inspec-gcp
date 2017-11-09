@@ -5,9 +5,11 @@ class GcpProject < Inspec.resource(1)
   desc 'Verifies settings for a project'
 
   example "
-    describe gcp_project(name: 'my-instance') do
-      it { should be_running }
-      it { should have_roles }
+    describe gcp_project('silicon-vertex-398188') do
+      it { should exist }
+      its('name') { should eq 'My First Project' }
+      its('project_number') { should eq '3934801284823' }
+      its('lifecycle_state') { should eq 'ACTIVE' }
     end
   "
 
