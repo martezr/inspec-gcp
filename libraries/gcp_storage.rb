@@ -29,3 +29,4 @@ class GcpStorage < Inspec.resource(1)
       return @error['error']['message']
     end
   end
+end
