@@ -2,8 +2,6 @@
 
 Use the `gcp_instance` InSpec audit resource to test properties of a single GCP instance.
 
-<br>
-
 ## Examples
 
 The following examples show how to use this InSpec audit resource.
@@ -16,19 +14,19 @@ The following examples show how to use this InSpec audit resource.
 
 ### Test that a GCP instance is running
 
-    describe aws_ec2_instance(name: 'prod-database') do
+    describe gcp_instance(name: 'prod-database') do
       its('status') { should eq 'running' }
     end
 
 ### Test that a GCP instance is using the correct image ID
 
-    describe aws_iam_instance(name: 'my-instance') do
+    describe gcp_instance(name: 'my-instance') do
       its('image_id') { should eq 'ami-27a58d5c' }
     end
 
 ### Test that a GCP instance has the correct tag
 
-    describe aws_ec2_instance('i-090c29e4f4c165b74') do
+    describe gcp_instance('i-090c29e4f4c165b74') do
       it { should have_network_tag('test') }
     end
 

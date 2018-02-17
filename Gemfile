@@ -6,6 +6,7 @@ gem 'rubocop'
 gem 'highline', '~> 1.6.0'
 gem 'google-api-client'
 gem 'googleauth'
+gem 'google-cloud'
 gem 'nokogiri'
 gem 'minitest', '5.10.1'
 

@@ -63,10 +63,10 @@ end
 
  * `gcp_instance` - Verifies settings for a GCP instance
  * `gcp_project` - Verifies settings for a GCP project
+ * `gcp_storage` - Verifies settings for a GCP bucket
 
 ### Roadmap
 
- * `gcp_storage`
  * `gcp_iam`
  * `gcp_container`
 
