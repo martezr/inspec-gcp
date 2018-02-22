@@ -10,7 +10,6 @@ class GcpStorage < Inspec.resource(1)
       its('storage_class') { should eq 'REGIONAL' }
       its('location') { should eq 'US-CENTRAL1' }
       its('lifecycle') { should eq 'enabled' }
-      its('')
     end
   "
 
