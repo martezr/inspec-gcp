@@ -9,6 +9,8 @@ class GcpStorage < Inspec.resource(1)
       it { should exist }
       its('storage_class') { should eq 'REGIONAL' }
       its('location') { should eq 'US-CENTRAL1' }
+      its('lifecycle') { should eq 'enabled' }
+      its('')
     end
   "
 
@@ -46,6 +48,18 @@ class GcpStorage < Inspec.resource(1)
       return @error['error']['message']
     end
   end
+
+  def lifecycle
+    if @bucket.lifecycle.nil?
+      return 'disabled'
+    else
+      return 'enabled'
+    end
+  end
+
+#  def lifecycle_rule
+
+#  end
 
   def storage_class
     if @bucket

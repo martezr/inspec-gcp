@@ -10,6 +10,7 @@ class GcpProject < Inspec.resource(1)
       its('name') { should eq 'My First Project' }
       its('project_number') { should eq '3934801284823' }
       its('lifecycle_state') { should eq 'ACTIVE' }
+      its('labels') { should include(key: 'contact', value: 'operations') }
     end
   "
 
@@ -23,7 +24,7 @@ class GcpProject < Inspec.resource(1)
       @error = JSON.parse(e.body)
     end
   end
-  
+
   def project_number
     if @project
       @project.project_number.to_s
@@ -36,6 +37,14 @@ class GcpProject < Inspec.resource(1)
   def create_time
     if @project
       @project.create_time
+    else
+      return @error['error']['message']
+    end
+  end
+
+  def labels
+    if @project
+      @labels ||= @project.labels.map { |k,v| { key: k, value: v } }
     else
       return @error['error']['message']
     end

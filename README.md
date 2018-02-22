@@ -11,6 +11,16 @@ As of now, GCP resources are implemented as an InSpec resource pack. It will shi
 └── libraries - contains GCP resources
 ```
 
+
+## Requirements
+
+In order to utilize the GCP InSpec resource pack the following software must be installed on the system.
+
+* InSpec
+* google-api-client ruby gem
+* googleauth ruby gem
+* google-cloud ruby gem
+
 ## Get started
 
 Before running the profile with InSpec, define environment variables with your GCP credentials.  InSpec supports the following variables:

@@ -20,12 +20,12 @@ class GcpInstance < Inspec.resource(1)
     @display_name = @opts[:name]
     @instance_client = conn.compute_client
     begin
-      @instance = @instance_client.get_instance(@opts[:project], @opts[:zone], @opts[:name])
+      @instance = @instance_client.get_instance(@opts[:projecft], @opts[:zone], @opts[:name])
     rescue => e
       @error = JSON.parse(e.body)
     end
   end
-  
+
   def instance_id
     if @instance
       @instance.id.to_s
