@@ -29,24 +29,23 @@ class GcpProject < Inspec.resource(1)
     if @project
       @project.project_number.to_s
     else
-      return @error['error']['message']
+      @error['error']['message']
     end
   end
-
 
   def create_time
     if @project
       @project.create_time
     else
-      return @error['error']['message']
+      @error['error']['message']
     end
   end
 
   def labels
     if @project
-      @labels ||= @project.labels.map { |k,v| { key: k, value: v } }
+      @labels ||= @project.labels.map { |k, v| { key: k, value: v } }
     else
-      return @error['error']['message']
+      @error['error']['message']
     end
   end
 
@@ -54,7 +53,7 @@ class GcpProject < Inspec.resource(1)
     if @project
       @project.lifecycle_state
     else
-      return @error['error']['message']
+      @error['error']['message']
     end
   end
 
@@ -66,12 +65,11 @@ class GcpProject < Inspec.resource(1)
     if @project
       @project.name
     else
-      return @error['error']['message']
+      @error['error']['message']
     end
   end
 
   def to_s
     "Project #{@display_name}"
   end
-
 end

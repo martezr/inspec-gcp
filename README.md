@@ -1,5 +1,7 @@
 # InSpec for Google Cloud Platform (GCP)
 
+[![Build Status Master](https://travis-ci.org/martezr/inspec-gcp.svg?branch=master)](https://travis-ci.org/martezr/inspec-gcp)
+
 ## Roadmap
 
 This repository is the development repository for InSpec for GCP.

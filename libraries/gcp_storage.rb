@@ -24,47 +24,42 @@ class GcpStorage < Inspec.resource(1)
     end
   end
 
-#  def has_bucket_label?(label_name)
-#    if @bucket
-#      labels = @bucket.labels.items
-#      labels.each do |label|
-#        if label == label_name
-#          break
-#        end
-#      end
-#    else
-#      @error['error']['message']
-#      false
-#    end
-#
-#    return false
-#  end
+  # def has_bucket_label?(label_name)
+  #   if @bucket
+  #     labels = @bucket.labels.items
+  #     labels.each do |label|
+  #       if label == label_name
+  #         break
+  #       end
+  #     end
+  #   else
+  #     @error['error']['message']
+  #     false
+  #   end
+  #   return false
+  # end
 
   def location
     if @bucket
       @bucket.location.to_s
     else
-      return @error['error']['message']
+      @error['error']['message']
     end
   end
 
   def lifecycle
     if @bucket.lifecycle.nil?
-      return 'disabled'
+      'disabled'
     else
-      return 'enabled'
+      'enabled'
     end
   end
-
-#  def lifecycle_rule
-
-#  end
 
   def storage_class
     if @bucket
       @bucket.storage_class.to_s
     else
-      return @error['error']['message']
+      @error['error']['message']
     end
   end
 

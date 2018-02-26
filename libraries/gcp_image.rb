@@ -29,15 +29,15 @@ class GcpImage < Inspec.resource(1)
     if @image
       @image.id.to_s
     else
-      return @error['error']['message']
+      @error['error']['message']
     end
   end
 
   def family
     if @image
-      return @image.family
+      @image.family
     else
-      return @error['error']['message']
+      @error['error']['message']
     end
   end
 
@@ -45,7 +45,7 @@ class GcpImage < Inspec.resource(1)
     if @image
       @image.name
     else
-      return @error['error']['message']
+      @error['error']['message']
     end
   end
 
@@ -53,7 +53,7 @@ class GcpImage < Inspec.resource(1)
     if @image
       @image.source_image_id
     else
-      return @error['error']['message']
+      @error['error']['message']
     end
   end
 
@@ -61,7 +61,7 @@ class GcpImage < Inspec.resource(1)
     if @image
       @image.source_type
     else
-      return @error['error']['message']
+      @error['error']['message']
     end
   end
 
@@ -69,7 +69,7 @@ class GcpImage < Inspec.resource(1)
     if @image
       @image.status.downcase
     else
-      return @error['error']['message']
+      @error['error']['message']
     end
   end
 
@@ -80,5 +80,4 @@ class GcpImage < Inspec.resource(1)
   def to_s
     "Image #{@display_name}"
   end
-
 end

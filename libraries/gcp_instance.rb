@@ -30,15 +30,15 @@ class GcpInstance < Inspec.resource(1)
     if @instance
       @instance.id.to_s
     else
-      return @error['error']['message']
+      @error['error']['message']
     end
   end
 
   def cpu_platform
     if @instance
-      return @instance.cpu_platform
+      @instance.cpu_platform
     else
-      return @error['error']['message']
+      @error['error']['message']
     end
   end
 
@@ -46,7 +46,7 @@ class GcpInstance < Inspec.resource(1)
     if @instance
       @instance.name
     else
-      return @error['error']['message']
+      @error['error']['message']
     end
   end
 
@@ -54,7 +54,7 @@ class GcpInstance < Inspec.resource(1)
     if @instance
       @instance.machine_type.split('/').last
     else
-      return @error['error']['message']
+      @error['error']['message']
     end
   end
 
@@ -62,7 +62,7 @@ class GcpInstance < Inspec.resource(1)
     if @instance
       @instance.status.downcase
     else
-      return @error['error']['message']
+      @error['error']['message']
     end
   end
 
@@ -72,7 +72,6 @@ class GcpInstance < Inspec.resource(1)
       tags.each do |tag|
         if tag == tag_name
           return true
-          break
         end
       end
     else
@@ -80,7 +79,7 @@ class GcpInstance < Inspec.resource(1)
       false
     end
 
-    return false
+    false
   end
 
   def exists?
@@ -90,5 +89,4 @@ class GcpInstance < Inspec.resource(1)
   def to_s
     "Instance #{@display_name}"
   end
-
 end

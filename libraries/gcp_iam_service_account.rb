@@ -16,8 +16,8 @@ class GcpIamServiceAccount < Inspec.resource(1)
     @opts.is_a?(Hash) ? @display_name = @opts[:name] : @display_name = opts
     @iam_client = conn.iam_client
     begin
-      roles = @iam_client.list_roles()
-      for role in roles.roles
+      roles = @iam_client.list_roles
+      roles.roles.each do |role|
         if @display_name == role.title
           @iam_role = @iam_client.get_role(role.name)
         end
@@ -35,12 +35,11 @@ class GcpIamServiceAccount < Inspec.resource(1)
     if @iam_role
       @iam_role.stage
     else
-      return @error['error']['message']
+      @error['error']['message']
     end
   end
 
   def to_s
     "IAM Role #{@display_name}"
   end
-
 end
