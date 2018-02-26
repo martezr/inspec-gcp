@@ -77,6 +77,7 @@ end
  * `gcp_instance` - Verifies settings for a GCP instance
  * `gcp_project` - Verifies settings for a GCP project
  * `gcp_storage` - Verifies settings for a GCP bucket
+ * `gcp_image` - Verifies settings for a GCP image
 
 ### Roadmap
 

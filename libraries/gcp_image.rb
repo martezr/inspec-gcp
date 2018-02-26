@@ -8,9 +8,9 @@ class GcpImage < Inspec.resource(1)
     describe gcp_image(project: 'silicon-vertex-398188',name: 'image-1') do
       it { should exist }
       its('name') { should eq 'inspec-test' }
-      its('source_type') { should eq 'f1-micro' }
-      its('family') { should eq 'Intel Haswell' }
-      its('status') { should eq 'running' }
+      its('source_type') { should eq 'RAW' }
+      its('family') { should eq 'inspec-test-family' }
+      its('status') { should eq 'ready' }
     end
   "
 

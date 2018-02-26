@@ -1,4 +1,4 @@
-control 'azure_vm_example' do
+control 'gcp_instance_example' do
   title 'Check if the Example Instance matches expectations'
   impact 1.0
 
