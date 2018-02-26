@@ -1,6 +1,7 @@
 # InSpec for Google Cloud Platform (GCP)
-
+[![GitHub release](https://img.shields.io/github/release/martezr/inspec-gcp)](https://github.com/martezr/inspec-gcp/releases)
 [![Build Status Master](https://travis-ci.org/martezr/inspec-gcp.svg?branch=master)](https://travis-ci.org/martezr/inspec-gcp)
+[![license](https://img.shields.io/github/license/martezr/inspec-gcp.svg)](https://github.com/martezr/inspec-gcp/blob/master/LICENSE)
 
 ## Roadmap
 

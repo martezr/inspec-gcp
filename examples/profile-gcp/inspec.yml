@@ -1,0 +1,11 @@
+name: profile-gcp
+title: Google Cloud Platform (GCP) Example Profile
+maintainer: Martez Reed
+copyright: Martez Reed
+copyright_email: martez.reed@greenreedtech.com
+license: Apache-2.0
+summary: Demonstrates the use of an InSpec Compliance Profile on Google Cloud Platform (GCP)
+version: 1.0.0
+
+supports:
+  - platform: gcp
